@@ -12,7 +12,17 @@ public class NumberToWordsConverter
 									"six",
 									"seven",
 									"eight",
-									"nine"};
+									"nine",
+									"ten",
+									"eleven",
+									"twelve",
+									"thirteen",
+									"fourteen",
+									"fifteen",
+									"sixteen",
+									"seventeen",
+									"eighteen",
+									"nineteen"};
 
 	public static String convert(final int number)
 	{
