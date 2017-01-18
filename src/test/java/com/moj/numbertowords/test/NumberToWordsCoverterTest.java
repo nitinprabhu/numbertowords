@@ -43,6 +43,19 @@ public class NumberToWordsCoverterTest
 		assertNumberToWordsConversion(19, "nineteen");
 	}
 
+	@Test
+	public void convertsMultiplesOfTenUpToNinety()
+	{
+		assertNumberToWordsConversion(20, "twenty");
+		assertNumberToWordsConversion(30, "thirty");
+		assertNumberToWordsConversion(40, "forty");
+		assertNumberToWordsConversion(50, "fifty");
+		assertNumberToWordsConversion(60, "sixty");
+		assertNumberToWordsConversion(70, "seventy");
+		assertNumberToWordsConversion(80, "eighty");
+		assertNumberToWordsConversion(90, "ninety");
+	}
+
 	private void assertNumberToWordsConversion(final int number, final String expectedWords)
 	{
 		assertEquals(expectedWords, NumberToWordsConverter.convert(number));

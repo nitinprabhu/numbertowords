@@ -2,7 +2,7 @@ package com.moj.numbertowords;
 
 public class NumberToWordsConverter
 {
-	private static final String[] NUMBERS = {
+	private static final String[] NUMBERS_UP_TO_19 = {
 									"zero",
 									"one",
 									"two",
@@ -24,9 +24,28 @@ public class NumberToWordsConverter
 									"eighteen",
 									"nineteen"};
 
+	private static final String[] MULTIPLES_OF_10 = {
+									"",
+									"",
+									"twenty",
+									"thirty",
+									"forty",
+									"fifty",
+									"sixty",
+									"seventy",
+									"eighty",
+									"ninety"};
+
 	public static String convert(final int number)
 	{
-		return NUMBERS[number];
+		if (number < 20)
+		{
+			return NUMBERS_UP_TO_19[number];
+		}
+		else
+		{
+			return MULTIPLES_OF_10[number / 10];
+		}
 	}
 
 }
