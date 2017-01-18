@@ -38,13 +38,26 @@ public class NumberToWordsConverter
 
 	public static String convert(final int number)
 	{
-		if (number < 20)
+		if (number >= 100)
+		{
+			return NUMBERS_UP_TO_19[number / 100] + " hundred";
+		}
+		else if (number < 20)
 		{
 			return NUMBERS_UP_TO_19[number];
 		}
 		else
 		{
-			return MULTIPLES_OF_10[number / 10];
+			final int tens = number / 10;
+			final int units = number - tens * 10;
+			if (units == 0)
+			{
+				return MULTIPLES_OF_10[tens];
+			}
+			else
+			{
+				return MULTIPLES_OF_10[tens] + "-" + NUMBERS_UP_TO_19[units];
+			}
 		}
 	}
 

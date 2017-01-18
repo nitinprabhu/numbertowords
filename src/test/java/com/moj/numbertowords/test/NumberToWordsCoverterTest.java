@@ -56,6 +56,20 @@ public class NumberToWordsCoverterTest
 		assertNumberToWordsConversion(90, "ninety");
 	}
 
+	@Test
+	public void convertsArbitraryTwoDigitNumbers()
+	{
+		assertNumberToWordsConversion(36, "thirty-six");
+		assertNumberToWordsConversion(79, "seventy-nine");
+	}
+
+	@Test
+	public void convertsHundreds()
+	{
+		assertNumberToWordsConversion(100, "one hundred");
+		assertNumberToWordsConversion(200, "three hundred");
+	}
+
 	private void assertNumberToWordsConversion(final int number, final String expectedWords)
 	{
 		assertEquals(expectedWords, NumberToWordsConverter.convert(number));
