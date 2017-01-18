@@ -1,5 +1,8 @@
 package com.moj.numbertowords;
 
+/**
+ * @author nitinprabhu
+ */
 public class NumberToWordsConverter
 {
 	private static final String[] NUMBERS_UP_TO_19 = {
@@ -34,12 +37,14 @@ public class NumberToWordsConverter
 									"seventy",
 									"eighty",
 									"ninety"};
+
 	private int number = 0;
+
 	private StringBuffer result = new StringBuffer();
 
 	public static String convert(final int number)
 	{
-		return new NumberToWordsConverter(number).convert();
+		return new NumberToWordsConverter(number).convertToWord();
 	}
 
 	public NumberToWordsConverter(final int number)
@@ -47,7 +52,7 @@ public class NumberToWordsConverter
 		this.number = number;
 	}
 
-	public String convert()
+	public String convertToWord()
 	{
 		if (number == 0)
 		{
@@ -69,6 +74,7 @@ public class NumberToWordsConverter
 		appendThousands(thousands);
 		appendHundreds(hundreds);
 		appendTensAndUnits(tensAndUnits);
+
 		return result.toString();
 	}
 
@@ -77,7 +83,7 @@ public class NumberToWordsConverter
 		if (millions > 0)
 		{
 			NumberToWordsConverter millionsConvertor = new NumberToWordsConverter(millions);
-			append(millionsConvertor.convert() + " million");
+			append(millionsConvertor.convertToWord() + " million");
 		}
 	}
 
@@ -86,7 +92,7 @@ public class NumberToWordsConverter
 		if (thousands > 0)
 		{
 			NumberToWordsConverter thousandsConvertor = new NumberToWordsConverter(thousands);
-			append(thousandsConvertor.convert() + " thousand");
+			append(thousandsConvertor.convertToWord() + " thousand");
 		}
 	}
 

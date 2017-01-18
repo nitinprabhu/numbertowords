@@ -5,6 +5,9 @@ import static org.junit.Assert.*;
 
 import com.moj.numbertowords.NumberToWordsConverter;
 
+/**
+ * @author nitinprabhu
+ */
 public class NumberToWordsCoverterTest
 {
 
